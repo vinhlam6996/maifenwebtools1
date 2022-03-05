@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content='MaifenNetwork cộng đồng chia sẻ đam mê phượt, công nghệ, khoa học, kỹ thuật, kinh tế, đầu tư, tiền kỹ thuật số, tìm bạn bè facebook, tìm bạn thân nhất trên facebook, bạn thân facebook' name='description' />
+    <meta content='maifen, maifennetwork, phượt, tiền ảo, maifen community, cộng đồng maifen, hello maifen' name='keywords' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.leanhduc.pro.vn/font-awesome/pro-5.15.3/css/all.css" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='src/style.css') }}" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Tìm Best Friend trên Facebook</title>
+</head>
+<body>
+
+<div class="container">
+   <br>
+   <h1 class="text-center">TÌM 10 NGƯỜI BẠN THÂN NHẤT TRÊN FACEBOOK</h1>
+   <h5 class="text-center">Nếu bạn chưa biết cách sử dụng, hãy xem <a href="#">video này</a></h5>
+   <br>
+</div>
+<br>
+
+<div class="container">
+<form class="form" method="post" action="/best-friend">
+   <div class="form-group">
+      <textarea rows="8" style="color:white;" type="text" class="form-control bg-dark" name="source_code" placeholder="NHẬP SOURCE CODE HTML FACEBOOK CỦA BẠN..." required></textarea>
+   </div>
+   <div class="form-group">
+      <center><input type="submit" class="btn btn-success" value="XEM NGAY VÀ LIỀN!!!"></center>
+   </div>
+</form>
+</div>
+
+<br><br>
+
+{% if k_qua %}
+<div class="container">
+<table class="table" style="color: white;">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center">Avatar</th>
+      <th scope="col" class="text-center">Tên</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for result in k_qua %}
+    <tr>
+      <td class="text-center"><img src="{{ result['url'] }}" border=1 height=45 width=45 alt="..."/></td>
+      <td class="text-center"><a href="https://www.facebook.com/{{result['id']}}" target="_blank">{{result['name']}}</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+   <footer class="bg-muted text-center text-lg-start">
+      <div class="text-center p-3">
+          © Copyright 2022 by <a href="https://m.me/vn.nguyenduchoang/" target="_blank">NDH A2K43LVT</a>
+      </div>
+   </footer>
+
+{% endif %}
+
+</body>
+<style>body{background-color: #1c1e21;color: white;}</style>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta content='MaifenNetwork cộng đồng chia sẻ đam mê phượt, công nghệ, khoa học, kỹ thuật, kinh tế, đầu tư, tiền kỹ thuật số' name='description' />
+    <meta content='maifen, maifennetwork, phượt, tiền ảo, maifen community, cộng đồng maifen, hello maifen' name='keywords' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.leanhduc.pro.vn/font-awesome/pro-5.15.3/css/all.css" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='src/style.css') }}" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>MaifenNetwork | Dashboard</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="/">MAIFEN NETWORK</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a href="#" class="nav-link" data-toggle="modal" data-target="#gioi_thieu">Giới thiệu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cộng đồng</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Resources
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item bg-dark" target="_blank" href="https://github.com/">Github</a>
+                        <a class="dropdown-item bg-dark" target="_blank" href="https://cloudflare.com/">Cloudflare</a>
+                        <a class="dropdown-item bg-dark" target="_blank" href="https://fontawesome.com/">Fontawesome</a>
+                    </div>
+                </li>
+            </ul>
+            <span class="form-inline my-2 my-lg-0">
+                <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#contact_modal">LIÊN HỆ</button>
+            </span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <br>
+        {% if msg %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <center><b>{{ msg }}</b></center>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endif %}
+        <h1 class="text-center">WELCOME BACK</h1>
+        <h3 class="text-center">MAIFEN TOOLS</h3>
+        <br>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container-ndh">
+        <a href="2fa" target="_blank" style="text-decoration: none;">
+            <div class="card">
+                <div class="content">
+                    <div class="imgBx"><img alt="" src="{{ url_for('static',filename='image/2fa.svg') }}"></div>
+                    <div class="contentBx">
+                        <h3>LẪY MÃ 2FA</h3>
+                    </div>
+                </div>
+                <ul class="sci">
+                    <li><i class="fas fa-eye"></i></li>
+                </ul>
+            </div>
+        </a>
+
+
+        <a href="/best-friend" target="_blank" style="text-decoration: none;">
+            <div class="card">
+                <div class="content">
+                    <div class="imgBx"><img alt="" src="{{ url_for('static',filename='image/fb.svg') }}"></div>
+                    <div class="contentBx">
+                        <h3>TÌM 10 NGƯỜI BẠN THÂN NHẤT TRÊN FACEBOOK</h3>
+                    </div>
+                </div>
+                <ul class="sci">
+                    <li><i class="fas fa-eye"></i></li>
+                </ul>
+            </div>
+        </a>
+
+
+        <a href="#" target="_blank" style="text-decoration: none;">
+            <div class="card">
+                <div class="content">
+                    <div class="imgBx"><img alt="" src="{{ url_for('static',filename='image/find.svg') }}"></div>
+                    <div class="contentBx">
+                        <h3>COMING SOON</h3>
+                    </div>
+                </div>
+                <ul class="sci">
+                    <li><i class="fas fa-eye"></i></li>
+                </ul>
+            </div>
+        </a>
+
+
+        <a href="#" target="_blank" style="text-decoration: none;">
+            <div class="card">
+                <div class="content">
+                    <div class="imgBx"><img alt="" src="{{ url_for('static',filename='image/find.svg') }}"></div>
+                    <div class="contentBx">
+                        <h3>COMING SOON</h3>
+                    </div>
+                </div>
+                <ul class="sci">
+                    <li><i class="fas fa-eye"></i></li>
+                </ul>
+            </div>
+        </a>
+
+
+        <a href="#" target="_blank" style="text-decoration: none;">
+            <div class="card">
+                <div class="content">
+                    <div class="imgBx"><img alt="" src="{{ url_for('static',filename='image/find.svg') }}"></div>
+                    <div class="contentBx">
+                        <h3>COMING SOON</h3>
+                    </div>
+                </div>
+                <ul class="sci">
+                    <li><i class="fas fa-eye"></i></li>
+                </ul>
+            </div>
+        </a>
+
+
+        <a href="#" target="_blank" style="text-decoration: none;">
+            <div class="card">
+                <div class="content">
+                    <div class="imgBx"><img alt="" src="{{ url_for('static',filename='image/find.svg') }}"></div>
+                    <div class="contentBx">
+                        <h3>COMING SOON</h3>
+                    </div>
+                </div>
+                <ul class="sci">
+                    <li><i class="fas fa-eye"></i></li>
+                </ul>
+            </div>
+        </a>
+
+
+        <a href="#" target="_blank" style="text-decoration: none;">
+            <div class="card">
+                <div class="content">
+                    <div class="imgBx"><img alt="" src="{{ url_for('static',filename='image/find.svg') }}"></div>
+                    <div class="contentBx">
+                        <h3>COMING SOON</h3>
+                    </div>
+                </div>
+                <ul class="sci">
+                    <li><i class="fas fa-eye"></i></li>
+                </ul>
+            </div>
+        </a>
+
+
+
+
+
+    </div>
+
+
+    <!-- The Modal - Contact -->
+    <div class="modal fade" id="contact_modal">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background: #343a40;">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">HÃY LIÊN HỆ VỚI BỌN MÌNH!</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form method="post" action="/contact">
+                        <div class="form-group">
+                            <input style="color: white;" type="text" class="form-control bg-dark" name="name" placeholder="Tên bạn là gì?" required />
+                        </div>
+                        <div class="form-group">
+                            <input style="color: white;" type="email" class="form-control bg-dark" name="mail" placeholder="Email của bạn" required />
+                        </div>
+                        <div class="form-group">
+                            <textarea style="color: white;" type="text" rows="8" class="form-control bg-dark" name="msgs" placeholder="Tin nhắn..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <center><button type="submit" class="btn btn-success">GỬI <i class="fa fa-paper-plane"></i></button></center>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Modal - Giới thiệu -->
+    <div class="modal fade" id="gioi_thieu">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h1 class="modal-title">Hello My friends!</h1>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body bg-dark">
+                    <h3>Chào mừng bạn đến với website của MaifenNetwork</h3>
+                    <hr>
+                    <p>Mặc dù chỉ mới là một cộng đồng non trẻ, nhưng mong muốn lớn nhất của team đó chính là gắn kết mọi người lại với nhau, cùng chia sẻ những kinh nghiệm, các bài học, mẹo vặt trong cuộc sống... biến cuộc đời trở nên tươi đẹp hơn</p>
+                    <hr>
+                    <p>Hệ sinh thái của Maifen chủ yếu tập trung nhiều vào các Vlogs phượt, du lịch, nghỉ dưỡng... các chủ đề về khoa học công nghệ, và một số lĩnh vực kinh tế như đầu tư, tiền mã hóa...</p>
+                    <hr>
+                    <p>Bọn mình rất hy vọng, các bạn sẽ là một trong những nhân tố quan trọng để giúp cộng đồng trở nên phát triển mạnh mẽ hơn nữa trong tương lai không xa nào đó</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-muted text-center text-lg-start">
+        <div class="text-center p-3">
+            © Copyright <script>
+                document.write(new Date().getFullYear());
+            </script> by <a href="https://m.me/vn.nguyenduchoang/" target="_blank">NDH A2K43LVT</a>
+        </div>
+    </footer>
+</body>
+<style>
+    body {
+        background-color: #1c1e21;
+        color: white;
+    }
+</style>
+
+</html>

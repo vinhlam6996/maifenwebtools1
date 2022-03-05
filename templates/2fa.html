@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+	<title>TOOLS LẤY MÃ 2FA</title>
+</head>
+<body class="text-center">
+	<div class="container mt-5">
+		<h1 class="text-center">LẤY MÃ 2FA (FB, GG,...)</h1>
+		{% if error_msg %}
+		<center><div class="alert alert-danger">KEY BẠN NHẬP KHÔNG TỒN TẠI!</div></center>
+		{% endif %}
+		<p>Nếu cần lấy một lúc nhiều mã thì mỗi mã secret key bạn nhập cho mình một dòng nhé</p>
+		<form class="form" method="post" action="/2fa">
+			<div class="form-group">
+				<textarea rows="8" style="color:white;" type="text" class="form-control bg-dark" name="key" placeholder="NHẬP MÃ SECRET..." required></textarea>
+			</div>
+			<div class="form-group">
+				<center><input type="submit" class="btn btn-success" value="NHẬN NGAY" /></center>
+			</div>
+		</form>
+		{% if code %}
+		<div class="form">
+			<div class="form-group">
+				<textarea rows="8" style="color:white;" type="text" class="form-control bg-dark" id="myInput">{% for i in range(0, len_) %}{{ code[i] }}{% endfor %}</textarea>
+			</div>
+			<div class="form-group">
+				<center><input type="submit" class="btn btn-success" value="COPY" onclick="myFunction()"/></center>
+			</div>
+		</div>
+		{% endif %}
+	</div>
+
+	<style type="text/css">
+		html,body{height:90%}body{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;padding-top:40px;padding-bottom:40px;background-color:#1c1e21;color: white}
+	</style>
+
+<script>
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+}
+</script>
+
+</body>
+</html>
