@@ -20,13 +20,16 @@
    <h1 class="text-center">TÌM 10 NGƯỜI BẠN THÂN NHẤT TRÊN FACEBOOK</h1>
    <h5 class="text-center">Nếu bạn chưa biết cách sử dụng, hãy xem <a href="https://youtu.be/wTlgwCQBBls">video này</a></h5>
    <br>
+   {% if msg %}
+   <center><div class="alert alert-danger">NỘI DUNG BẠN NHẬP KHÔNG ĐÚNG HƯỚNG DẪN</div></center>
+   {% endif %}
 </div>
 <br>
 
 <div class="container">
 <form class="form" method="post" action="/best-friend">
    <div class="form-group">
-      <textarea rows="8" style="color:white;" type="text" class="form-control bg-dark" name="source_code" placeholder="NHẬP SOURCE CODE HTML FACEBOOK CỦA BẠN..." required></textarea>
+      <textarea rows="12" style="color:white;" type="text" class="form-control bg-dark" name="source_code" placeholder="NHẬP SOURCE CODE HTML FACEBOOK CỦA BẠN..." required></textarea>
    </div>
    <div class="form-group">
       <center><input type="submit" class="btn btn-success" value="XEM NGAY VÀ LIỀN!!!"></center>
