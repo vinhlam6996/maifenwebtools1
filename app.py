@@ -97,10 +97,14 @@ def get_2fa_code():
 @app.route('/best-friend', methods=['GET', 'POST'])
 def best_friend():
     k_qua = []
+    msg = ''
     if request.method == "POST":
         data = request.form['source_code']
-        k_qua = get_best_friend(data)
-        return render_template('bestfriend.html', k_qua=k_qua)
+        try:
+            k_qua = get_best_friend(data)
+        except:
+            msg = 'loi roi ban ei'
+        return render_template('bestfriend.html', k_qua=k_qua, msg=msg)
     return render_template('bestfriend.html')
 
 
