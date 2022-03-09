@@ -1,8 +1,7 @@
 from flask import Flask
-from flask import Flask, render_template, redirect, url_for, request, session, send_file
-import requests, pyotp, json, threading
+from flask import Flask, render_template, redirect, url_for, request, session
+import requests, pyotp, json
 from bs4 import BeautifulSoup
-from time import sleep
 
 # -----------------------------
 def get_2fa(key):
