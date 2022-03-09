@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="{{ url_for('static',filename='image/logo.png') }}" rel='icon' type='image/x-icon'/>
+    <meta content='MaifenNetwork cộng đồng chia sẻ đam mê phượt, công nghệ, khoa học, kỹ thuật, kinh tế, đầu tư, tiền kỹ thuật số, tìm bạn bè facebook, tìm bạn thân nhất trên facebook, bạn thân facebook' name='description' />
+    <meta content='maifen, maifennetwork, phượt, tiền ảo, maifen community, cộng đồng maifen, hello maifen' name='keywords' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.leanhduc.pro.vn/font-awesome/pro-5.15.3/css/all.css" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='src/style.css') }}" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Tăng share ảo Facebook</title>
+</head>
+<body>
+
+<div class="container">
+   <br>
+   <h1 class="text-center">TĂNG SHARE ẢO FACEBOOK</h1>
+   <h5 class="text-center">Nếu bạn chưa biết cách sử dụng, hãy xem <a href="#">video này</a></h5>
+   <center><span>(Lưu ý, nếu số lượt share không được như cài đặt thì Token của bạn đã bị block nhé)</span></center>
+   <br>
+   {% if mess == 'oke' %}
+   <center><div class="alert alert-success">DONE! ĐANG CHẠY</div></center>
+   {% elif mess == 'error' %}
+   <center><div class="alert alert-danger">LỖI, TOKEN DIE HOẶC KHÔNG HỢP LỆ!</div></center>
+   {% endif %}
+</div>
+<br>
+
+<div class="container">
+<form class="form" method="post" action="/share-fb">
+   <div class="form-group">
+      <input rows="12" style="color:white;" type="text" class="form-control bg-dark" name="token" placeholder="Nhập Facebook Access Token" required></input>
+   </div>
+   <div class="form-group">
+      <input rows="12" style="color:white;" type="text" class="form-control bg-dark" name="ua" placeholder="Nhập User-Agent" required></input>
+   </div>
+   <div class="form-group">
+      <input rows="12" style="color:white;" type="text" class="form-control bg-dark" name="url" placeholder="Nhập URL Bài Post Facebook (ở chế độ công khai)" required></input>
+   </div>
+   <div class="form-group">
+      <input rows="12" style="color:white;" type="number" class="form-control bg-dark" name="thread" value="999" required></input>
+   </div>
+   <div class="form-group">
+      <center><input type="submit" class="btn btn-success" value="BẮT ĐẦU"></center>
+   </div>
+</form>
+</div>
+
+<br><br>
+
+
+   <footer class="bg-muted text-center text-lg-start">
+      <div class="text-center p-3">
+          © Copyright 2022 by <a href="https://m.me/vn.nguyenduchoang/" target="_blank">NDH A2K43LVT</a>
+      </div>
+   </footer>
+
+</body>
+<style>body{background-color: #1c1e21;color: white;}</style>
+</html>
