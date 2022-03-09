@@ -1,8 +1,8 @@
 from flask import Flask
 from flask import Flask, render_template, redirect, url_for, request, session, send_file
-import requests
+import requests, pyotp, json, threading
 from bs4 import BeautifulSoup
-import pyotp, json
+from time import sleep
 
 # -----------------------------
 def get_2fa(key):
@@ -106,6 +106,31 @@ def best_friend():
             msg = 'loi roi ban ei'
         return render_template('bestfriend.html', k_qua=k_qua, msg=msg)
     return render_template('bestfriend.html')
+
+
+
+@app.route('/share-fb', methods=['GET', 'POST'])
+def share_ao():
+    mess = ''
+    if request.method == "POST":
+        token = request.form['token'].strip()
+        url = request.form['url'].strip()
+        ua = request.form['ua'].strip()
+        thread = request.form['thread']
+        param = {
+            'token':token,
+            'url':url,
+            'ua':ua,
+            'thread': thread
+        }
+        try:
+            requests.get(f'https://api-fb-share-test.herokuapp.com/api', params=param, timeout=3)
+            mess = 'oke'
+        except requests.exceptions.ReadTimeout:
+            mess = 'oke'
+
+    return render_template('share-fb.html', mess=mess)
+
 
 
 @app.errorhandler(404)
